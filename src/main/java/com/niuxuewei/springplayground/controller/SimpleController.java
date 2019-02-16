@@ -1,6 +1,7 @@
 package com.niuxuewei.springplayground.controller;
 
 import com.niuxuewei.springplayground.domain.CustomSettings;
+import com.niuxuewei.springplayground.domain.MyException;
 import com.niuxuewei.springplayground.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,11 @@ public class SimpleController {
     @GetMapping("/testproperties")
     public Object testProperties() {
         return customSettings;
+    }
+
+    @GetMapping("/exception")
+    public Object exception() {
+        throw new MyException(10, "11");
     }
 
 }
