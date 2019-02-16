@@ -12,8 +12,12 @@ import java.util.Date;
 @RestController
 public class SimpleController {
 
+    private final CustomSettings customSettings;
+
     @Autowired
-    private CustomSettings customSettings;
+    public SimpleController(CustomSettings customSettings) {
+        this.customSettings = customSettings;
+    }
 
     @RequestMapping("/test")
     public String home() {
